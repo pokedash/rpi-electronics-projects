@@ -2,7 +2,7 @@ import  RPi.GPIO as GPIO
 import time 
 
 LED_PIN = 17
-BUTTON_PIN = 27
+BUTTON_PIN = 24
 
 
 GPIO.setmode(GPIO.BCM)
@@ -27,6 +27,7 @@ GPIO.add_event_detect(BUTTON_PIN, GPIO.FALLING,
                     bouncetime=200)
 
 while True:
+    print("Button value:", GPIO.input(BUTTON_PIN))
     time.sleep(0.1)
 
 
